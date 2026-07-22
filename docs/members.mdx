@@ -1,0 +1,25 @@
+---
+title: メンバー
+description: Slab.math 在籍メンバーの一覧。
+---
+
+{[
+  { name: "佐野彰", tags: ["Staff"] },
+  { name: "林靖陽", tags: ["M2"], theme: "調理音からの機械学習による食肉内部温度の非接触推定（仮）" },
+  { name: "藤田愛菜", tags: ["B4"], theme: "深層学習による外国為替の価格変動予測モデルの構築（仮）" },
+  { name: "佐藤颯真", tags: ["B4"], theme: "遺伝的アルゴリズムを用いた仮想生物の形態と運動の自律的最適化（仮）" },
+  { name: "柏田聡", tags: ["B4"], theme: "形態素解析に基づくモーラ数推定とLLMを統合した俳句創作学習支援チャットボットの開発（仮）" },
+  { name: "神田青龍", tags: ["B4"], theme: "YOLOv8によるバイクのリアルタイム前方危機検知システムの開発（仮）" },
+  { name: "前波陽斗", tags: ["B4"], theme: "Wave-U-Netを用いたピアノ楽曲からの主旋律抽出（仮）" },
+  { name: "守岡龍正", tags: ["B4"] },
+].map(({ name, tags, theme }) => (
+  <div style="padding: 0.75rem 1.1rem; border: 1px solid var(--blume-border); border-radius: var(--blume-radius); background: var(--blume-muted); margin-bottom: 0.75rem;">
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <span style="font-family: var(--blume-font-display); font-weight: 600;">{name}</span>
+      <div style="display: flex; gap: 0.4rem;">
+        {tags.map((tag) => <Badge>{tag}</Badge>)}
+      </div>
+    </div>
+    {theme && <p style="margin: 0.4rem 0 0; color: var(--blume-muted-foreground); font-size: 0.9rem;">{theme}</p>}
+  </div>
+))}

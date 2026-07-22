@@ -1,0 +1,21 @@
+---
+interface Props {
+  page: { title: string; description?: string };
+  headings: unknown[];
+  route: string;
+}
+
+const { route } = Astro.props;
+---
+
+{
+  route === "/" && (
+    <img
+      alt=""
+      height="61"
+      src="/images/icon-rabbit.png"
+      style="float: left; margin: 0.4rem 0.75rem 0 0;"
+      width="62"
+    />
+  )
+}

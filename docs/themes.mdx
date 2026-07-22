@@ -1,0 +1,390 @@
+---
+title: 過去テーマ一覧
+description: Slab.math でこれまでに取り組まれた卒業論文・修士論文のテーマ一覧。年代別・分野別に切り替えて閲覧できます。リンクのある項目は概要PDFを開けます。
+---
+
+分野別分類はタイトルからの機械的な推定です（1件が複数の分野に重複して含まれることがあります）。
+
+export const byYear = [
+  { label: "2026", items: [
+    ["調理音からの機械学習による食肉内部温度の非接触推定（仮）", null, ["修士論文"]],
+    ["深層学習による外国為替の価格変動予測モデルの構築（仮）", null, ["卒業論文"]],
+    ["遺伝的アルゴリズムを用いた仮想生物の形態と運動の自律的最適化（仮）", null, ["卒業論文"]],
+    ["形態素解析に基づくモーラ数推定とLLMを統合した俳句創作学習支援チャットボットの開発（仮）", null, ["卒業論文"]],
+    ["YOLOv8によるバイクのリアルタイム前方危機検知システムの開発（仮）", null, ["卒業論文"]],
+    ["Wave-U-Netを用いたピアノ楽曲からの主旋律抽出（仮）", null, ["卒業論文"]],
+  ]},
+  { label: "2025", items: [
+    ["類義語検索とカテゴリ分けを備えたカレンダーアプリ開発", "/files/themes/Abst2025Ono.pdf", ["卒業論文"]],
+    ["RAGを用いた対話型AIによる大学履修登録支援システムの構築", "/files/themes/Abst2025Yukawa.pdf", ["優秀プレゼン", "卒業論文"]],
+    ["逆オークション方式を搭載したWeb販売システムの設計・開発", "/files/themes/Abst2025Ito.pdf", ["卒業論文"]],
+    ["MobileNetV2-UNetを用いた髪型シミュレーションシステム", "/files/themes/Abst2025Fujio.pdf", ["卒業論文"]],
+    ["Notionデータを対象としたベクトル検索システム「NotionFinder」の開発", "/files/themes/Abst2025Tashiro.pdf", ["優秀プレゼン", "卒業論文"]],
+  ]},
+  { label: "2024", items: [
+    ["顔画像認識を活用したキャラクターとの音声対話システム", "/files/themes/Abst2024Ohata.pdf", ["優秀プレゼン", "卒業論文"]],
+    ["接客音声とPOS データの統合による販売奨励システムの自動化", "/files/themes/Abst2024Mochida.pdf", ["卒業論文"]],
+    ["ロジスティック回帰を用いたURL 特徴からのフィッシングサイト検出", "/files/themes/Abst2024Hayashi.pdf", ["卒業論文"]],
+    ["機械学習を用いた慣性式モーションキャプチャによる動作識別システム", "/files/themes/Abst2024Shibuya.pdf", ["修士論文", "優秀プレゼン"]],
+  ]},
+  { label: "2023", items: [
+    ["交通事故状況の3Dアニメーション自動生成システム", "/files/themes/Abst2023Shinohara.pdf", ["卒業論文"]],
+    ["機械学習を活用したイチゴ果実の画像認識モデルと栽培支援アプリケーションの開発", "/files/themes/Abst2023Matsumoto.pdf", ["優秀プレゼン", "卒業論文"]],
+    ["Mario-Playing を利用した深層強化学習におけるハイパーパ ラメータの影響の調査", "/files/themes/Abst2023Kawakami.pdf", ["卒業論文"]],
+    ["姿勢推定を用いたフェンシング動作の上達補助アプリの開発", "/files/themes/Abst2023Kamimura.pdf", ["卒業論文"]],
+    ["ChatGPT を用いた音声認識による注文システムの開発", "/files/themes/Abst2023Fukuhara.pdf", ["卒業論文"]],
+  ]},
+  { label: "2022", items: [
+    ["百人一首の読手音源データのクラスタリングと解析", "/files/themes/Abst2022Tani.pdf", ["卒業論文"]],
+    ["HRTFと加速度センサーを用いたリアルタイム空間オーディオ", "/files/themes/Abst2022Shibuya.pdf", ["卒業論文"]],
+    ["顔画像個人識別による属性情報表示システム", "/files/themes/Abst2022Sakota.pdf", ["卒業論文"]],
+  ]},
+  { label: "2021", items: [
+    ["BLE Beacon を用いた神社境内案内アプリの開発", "/files/themes/Abst2021Takai.pdf", ["卒業論文"]],
+    ["新型コロナウイルスの RNA 解析", "/files/themes/Abst2021nakagawa.pdf", ["卒業論文"]],
+    ["楽譜画像からのギター押弦位置推定システムの開発", "/files/themes/Abst2021Kitamura.pdf", ["優秀プレゼン", "卒業論文"]],
+    ["頭部モーションを用いたブラウザ操作", "/files/themes/Abst2021Shibata.pdf", ["卒業論文"]],
+    ["画像解析と音声認識を利用した授業動画の自動チャプタ分割", "/files/themes/abst2021kitamura.pdf", ["優秀プレゼン", "卒業論文"]],
+  ]},
+  { label: "2020", items: [
+    ["GANを用いた手書き数字画像の生成", "/files/themes/Abst2020Nogami.pdf", ["卒業論文"]],
+    ["仮想化環境を用いた複数画像からの3次元形状復元", "/files/themes/Abst2020Nakao.pdf", ["卒業論文"]],
+    ["Raspberry Piとソケット通信を用いた自動照明点灯システム", "/files/themes/Abst2020Nakanishi.pdf", ["卒業論文"]],
+    ["強化学習アルゴリズムPPOとSACの比較と考察", "/files/themes/Abst2020Kawakami.pdf", ["卒業論文"]],
+  ]},
+  { label: "2019", items: [
+    ["NAOを活用した音声認識による対話システムの作成", "/files/themes/t150003abst.pdf", ["卒業論文"]],
+  ]},
+  { label: "2018", items: [
+    ["言語運用能力向上のための通信型ナンプレアプリ", "/files/themes/Abst2018ito.pdf", ["卒業論文"]],
+    ["Python によるテキサスホールデムポーカーの役判定と勝敗決定", "/files/themes/Abst2018itami.pdf", ["卒業論文"]],
+    ["Structure from Motion による 2 次元画像から 3 次元点群の復元", "/files/themes/Abst2018inami.pdf", ["卒業論文"]],
+    ["無線メッシュ通信を用いた安否確認アプリの開発", "/files/themes/Abst2018takeuchi.pdf", ["卒業論文"]],
+  ]},
+  { label: "2016", items: [
+    ["word2vec を用いた n-gram モデルによる楽曲類似度解析", "/files/themes/Abst2016Wada.pdf", ["卒業論文"]],
+    ["遺伝的アルゴリズムによる人体モデルの動作獲得", "/files/themes/Abst2016Kiso.pdf", ["優秀プレゼン", "卒業論文"]],
+    ["部分領域間の流量関数近似による避難行動シミュレーション", "/files/themes/Abst2016Kouge_ja.pdf", ["修士論文"]],
+    ["人間の歌った音声で音楽を作る", "/files/themes/Abst2016Mitsuhashi.pdf", ["卒業論文"]],
+    ["非負値行列分解を用いた手書き数字画像の次元圧縮", "/files/themes/Abst2016Oka.pdf", ["卒業論文"]],
+  ]},
+  { label: "2015", items: [
+    ["確率的セルオートマトンによるモザイク動画の圧縮", "/files/themes/Abst2015Konishi.pdf", ["卒業論文"]],
+    ["音楽ゲームへの個別学習システムの実装", "/files/themes/Abst2015Yoshida.pdf", ["卒業論文"]],
+    ["打鍵による個人識別", "/files/themes/Abst2015Katayama.pdf", ["卒業論文"]],
+    ["A 型インフルエンザウイルスの HA 塩基配列の解析と変異予測シミュレーション", "/files/themes/Abst2015Shiba_ja.pdf", ["修士論文", "優秀プレゼン"]],
+    ["Word2vec を用いた MIDI 楽曲データの解析", "/files/themes/Abst2015Kawa_ja.pdf", ["修士論文"]],
+    ["画像局所特徴量を用いた 顔個人識別システムの比較", "/files/themes/Abst2015Ohno.pdf", ["卒業論文"]],
+    ["多重解像度解析を用いた音素分類木と音声超解像への適用", "/files/themes/Abst2015Sugii_ja.pdf", ["修士論文"]],
+  ]},
+  { label: "2014", items: [
+    ["盤面を分けてプレイアウトを行うコンピュータ囲碁の作成", "/files/themes/Abst2014kouge.pdf", ["卒業論文"]],
+    ["個人経営店のための運営補助ツールの作成", "/files/themes/Abst2014shimada.pdf", ["卒業論文"]],
+    ["話題語に注目したマルコフ連鎖型人工無能の改善", "/files/themes/Abst2014takayama.pdf", ["卒業論文"]],
+    ["ODEを用いたボール蹴りロボットによる的当ての学習", "/files/themes/Abst2014nakano.pdf", ["卒業論文"]],
+  ]},
+  { label: "2013", items: [
+    ["文ベクトルを用いた文脈考慮型人工無能", "/files/themes/Abst2013Yuuki.pdf", ["卒業論文"]],
+    ["区分解像度解析を用いた学習型超解像", "/files/themes/Abst2013Sugii.pdf", ["卒業論文"]],
+    ["多安定な価値構造を獲得する強化学習モデルとその学習ダイナミクス", "/files/themes/Abst2013Hama_ja.pdf", ["修士論文"]],
+    ["混合免疫モデルを用いたマルチエージェント感染シミュレーション", "/files/themes/Abst2013Arisa_ja.pdf", ["修士論文"]],
+  ]},
+  { label: "2012", items: [
+    ["Kinectを用いたものまねロボットシステムの開発", "/files/themes/Abst2012Shibue.pdf", ["卒業論文"]],
+    ["鏡面反射アナモルフォーシス画像生成システム", "/files/themes/Abst2012Takeshita.pdf", ["卒業論文"]],
+    ["価値付けによる緩やかなカテゴリ生成の認知モデル", "/files/themes/Abst2012Nagase_ja.pdf", ["修士論文"]],
+  ]},
+  { label: "2011", items: [
+    ["人間の腕の動作を再現するアームロボットシミュレーション", "/files/themes/Abst2011Tao.pdf", ["卒業論文"]],
+    ["実数値遺伝的アルゴリズムを用いた多関節モデルの前進動作獲得", "/files/themes/Abst2011Hamaguchi.pdf", ["卒業論文"]],
+    ["プログラミング言語 Erlang の評価", "/files/themes/Abst2011Hagiwara.pdf", ["卒業論文"]],
+    ["ニ足歩行ロボットの歩行速度自動調整システム", "/files/themes/Abst2011Arisa.pdf", ["卒業論文"]],
+  ]},
+  { label: "2010", items: [
+    ["Web検索とグラフ構造を用いた発想支援システム", "/files/themes/Abst2010Matsu.pdf", ["卒業論文"]],
+    ["ウイルス感染のシミュレーション", "/files/themes/Abst2010Nagase.pdf", ["卒業論文"]],
+    ["視界をもつ生物の群れのシミュレーション", "/files/themes/Abst2010Sawada.pdf", ["卒業論文"]],
+    ["文脈を考慮したマルコフ連鎖型チャットボットの作成", "/files/themes/Abst2010Yagi.pdf", ["卒業論文"]],
+    ["左右詰め手法と仮定法を用いたイラストロジック解読アルゴリズム", "/files/themes/Abst2010Yanagi.pdf", ["卒業論文"]],
+    ["多関節モデルにおける強化学習による起立動作の獲得", "/files/themes/Abst2010Asai_jp.pdf", ["修士論文"]],
+  ]},
+  { label: "2009", items: [
+    ["画像のパノラマ合成とその効率化", "/files/themes/Abst2009Sada.pdf", ["卒業論文"]],
+  ]},
+  { label: "2008", items: [
+    ["繰り返し囚人のジレンマにおけるしっぺ返し戦略の考察", "/files/themes/Abst2008Haneda.pdf", ["卒業論文"]],
+    ["画像からスケッチへの個性を反映した変換システム", "/files/themes/Abst2008Inoue.pdf", ["卒業論文"]],
+    ["サッカーリーグのデータ解析システム構築とデータ分析", "/files/themes/Abst2008Umehara.pdf", ["卒業論文"]],
+  ]},
+  { label: "2007", items: [
+    ["サッカーシミュレーションにおけるボールコントロールアルゴリズム", "/files/themes/Abst2007Shimada.pdf", ["卒業論文"]],
+    ["画像処理とクラスタリング", "/files/themes/Abst2007Ume.pdf", ["卒業論文"]],
+    ["サウンドビジュアライザの作成", "/files/themes/Abst2007Haya.pdf", ["卒業論文"]],
+    ["ODEによるスキーシミュレータ", "/files/themes/Abst2007Asai.pdf", ["卒業論文"]],
+  ]},
+  { label: "2006", items: [
+    ["サッカーシミュレーションにおけるチーム戦略", "/files/themes/Abst2006Noda.pdf", ["卒業論文"]],
+    ["個体移動を伴うウィルス感染拡散モデル", "/files/themes/Abst2006Kawai.pdf", ["卒業論文"]],
+    ["巡回セールスマン問題に対する最適化アルゴリズムの考察", "/files/themes/Abst2006Rika.pdf", ["卒業論文"]],
+  ]},
+  { label: "2004", items: [
+    ["Java3Dを利用した3次元イラストロジック", null, ["卒業論文", "高橋研"]],
+    ["Java3Dによるグラフ構造の描画", "/files/themes/Abst2004Inaba.pdf", ["卒業論文"]],
+    ["動画像の動き領域検出による背景抽出カメラ", null, ["卒業論文", "高橋研"]],
+  ]},
+  { label: "2003", items: [
+    ["データベースと連係によりメールを一元管理可能なメールクライアントの開発", null, ["卒業論文", "高橋研"]],
+    ["ヒューマノイドロボット HOAP-2 のリアルタイム制御", null, ["卒業論文", "高橋研"]],
+    ["顔画像の変換による表情操作", null, ["卒業論文", "高橋研"]],
+    ["遺伝的アルゴリズムによるユーザ変化に対応したゲーム戦略の進化", "/files/themes/Abst2003Ikeda.pdf", ["卒業論文"]],
+    ["色情報とオプティカルフローを用いた動画中の手の追跡", null, ["卒業論文", "高橋研"]],
+    ["画像の縮小・拡大を用いた部分空間法による顔領域の検出", null, ["修士論文", "高橋研"]],
+    ["ソフトウェアインターフェースの問題点に対する考察とそれに基づくエディタソフトの作成", "/files/themes/Abst2003Tsuchi.pdf", ["卒業論文"]],
+    ["マスタースレーブシステムを用いたブロック型ロボットの行動制御", "/files/themes/Abst2003Takeda.pdf", ["卒業論文"]],
+    ["色覚異常者のもつ色知覚のwebにおける再現", "/files/themes/Abst2003Okada.pdf", ["卒業論文"]],
+    ["自他解釈システムを持つ自律学習ロボットのコミュニケーション", "/files/themes/Abst2003Kimura.pdf", ["修士論文"]],
+  ]},
+  { label: "2002", items: [
+    ["ボートレース結果のデータベース化と解析", "/files/themes/Abst2002Moriya.pdf", ["卒業論文"]],
+    ["MML データの変調プログラム", "/files/themes/Abst2002Hino.pdf", ["卒業論文"]],
+    ["サーバ・クライアントシステムによるネットワーク鬼ごっこゲーム", "/files/themes/Abst2002Nakazawa.pdf", ["卒業論文"]],
+  ]},
+  { label: "2001", items: [
+    ["状態遷移確率モデルに基づく楽曲群の学習と構造分析", "/files/themes/Abst2001KosakiKoba.pdf", ["卒業論文"]],
+    ["局所的な線維結合を持つ神経回路モデル", "/files/themes/Abst2001Kimura.pdf", ["卒業論文"]],
+    ["ニューラルネットによる表情からの情動認識", "/files/themes/Abst2001Konishi.pdf", ["卒業論文"]],
+  ]},
+];
+
+export const byField = [
+  { label: "生成AI", items: [
+    ["形態素解析に基づくモーラ数推定とLLMを統合した俳句創作学習支援チャットボットの開発（仮）", null, ["2026", "卒業論文"]],
+    ["RAGを用いた対話型AIによる大学履修登録支援システムの構築", "/files/themes/Abst2025Yukawa.pdf", ["2025", "優秀プレゼン", "卒業論文"]],
+    ["ChatGPT を用いた音声認識による注文システムの開発", "/files/themes/Abst2023Fukuhara.pdf", ["2023", "卒業論文"]],
+    ["GANを用いた手書き数字画像の生成", "/files/themes/Abst2020Nogami.pdf", ["2020", "卒業論文"]],
+  ]},
+  { label: "機械学習", items: [
+    ["調理音からの機械学習による食肉内部温度の非接触推定（仮）", null, ["2026", "修士論文"]],
+    ["Notionデータを対象としたベクトル検索システム「NotionFinder」の開発", "/files/themes/Abst2025Tashiro.pdf", ["2025", "優秀プレゼン", "卒業論文"]],
+    ["ロジスティック回帰を用いたURL 特徴からのフィッシングサイト検出", "/files/themes/Abst2024Hayashi.pdf", ["2024", "卒業論文"]],
+    ["機械学習を用いた慣性式モーションキャプチャによる動作識別システム", "/files/themes/Abst2024Shibuya.pdf", ["2024", "修士論文", "優秀プレゼン"]],
+    ["機械学習を活用したイチゴ果実の画像認識モデルと栽培支援アプリケーションの開発", "/files/themes/Abst2023Matsumoto.pdf", ["2023", "優秀プレゼン", "卒業論文"]],
+    ["姿勢推定を用いたフェンシング動作の上達補助アプリの開発", "/files/themes/Abst2023Kamimura.pdf", ["2023", "卒業論文"]],
+    ["顔画像個人識別による属性情報表示システム", "/files/themes/Abst2022Sakota.pdf", ["2022", "卒業論文"]],
+    ["楽譜画像からのギター押弦位置推定システムの開発", "/files/themes/Abst2021Kitamura.pdf", ["2021", "優秀プレゼン", "卒業論文"]],
+    ["遺伝的アルゴリズムによる人体モデルの動作獲得", "/files/themes/Abst2016Kiso.pdf", ["2016", "優秀プレゼン", "卒業論文"]],
+    ["打鍵による個人識別", "/files/themes/Abst2015Katayama.pdf", ["2015", "卒業論文"]],
+    ["A 型インフルエンザウイルスの HA 塩基配列の解析と変異予測シミュレーション", "/files/themes/Abst2015Shiba_ja.pdf", ["2015", "修士論文", "優秀プレゼン"]],
+    ["画像局所特徴量を用いた 顔個人識別システムの比較", "/files/themes/Abst2015Ohno.pdf", ["2015", "卒業論文"]],
+    ["多重解像度解析を用いた音素分類木と音声超解像への適用", "/files/themes/Abst2015Sugii_ja.pdf", ["2015", "修士論文"]],
+    ["多安定な価値構造を獲得する強化学習モデルとその学習ダイナミクス", "/files/themes/Abst2013Hama_ja.pdf", ["2013", "修士論文"]],
+    ["混合免疫モデルを用いたマルチエージェント感染シミュレーション", "/files/themes/Abst2013Arisa_ja.pdf", ["2013", "修士論文"]],
+    ["価値付けによる緩やかなカテゴリ生成の認知モデル", "/files/themes/Abst2012Nagase_ja.pdf", ["2012", "修士論文"]],
+    ["実数値遺伝的アルゴリズムを用いた多関節モデルの前進動作獲得", "/files/themes/Abst2011Hamaguchi.pdf", ["2011", "卒業論文"]],
+    ["多関節モデルにおける強化学習による起立動作の獲得", "/files/themes/Abst2010Asai_jp.pdf", ["2010", "修士論文"]],
+    ["個体移動を伴うウィルス感染拡散モデル", "/files/themes/Abst2006Kawai.pdf", ["2006", "卒業論文"]],
+    ["状態遷移確率モデルに基づく楽曲群の学習と構造分析", "/files/themes/Abst2001KosakiKoba.pdf", ["2001", "卒業論文"]],
+  ]},
+  { label: "画像処理", items: [
+    ["YOLOv8によるバイクのリアルタイム前方危機検知システムの開発（仮）", null, ["2026", "卒業論文"]],
+    ["MobileNetV2-UNetを用いた髪型シミュレーションシステム", "/files/themes/Abst2025Fujio.pdf", ["2025", "卒業論文"]],
+    ["交通事故状況の3Dアニメーション自動生成システム", "/files/themes/Abst2023Shinohara.pdf", ["2023", "卒業論文"]],
+    ["頭部モーションを用いたブラウザ操作", "/files/themes/Abst2021Shibata.pdf", ["2021", "卒業論文"]],
+    ["GANを用いた手書き数字画像の生成", "/files/themes/Abst2020Nogami.pdf", ["2020", "卒業論文"]],
+    ["仮想化環境を用いた複数画像からの3次元形状復元", "/files/themes/Abst2020Nakao.pdf", ["2020", "卒業論文"]],
+    ["Structure from Motion による 2 次元画像から 3 次元点群の復元", "/files/themes/Abst2018inami.pdf", ["2018", "卒業論文"]],
+    ["非負値行列分解を用いた手書き数字画像の次元圧縮", "/files/themes/Abst2016Oka.pdf", ["2016", "卒業論文"]],
+    ["確率的セルオートマトンによるモザイク動画の圧縮", "/files/themes/Abst2015Konishi.pdf", ["2015", "卒業論文"]],
+    ["区分解像度解析を用いた学習型超解像", "/files/themes/Abst2013Sugii.pdf", ["2013", "卒業論文"]],
+    ["鏡面反射アナモルフォーシス画像生成システム", "/files/themes/Abst2012Takeshita.pdf", ["2012", "卒業論文"]],
+    ["画像のパノラマ合成とその効率化", "/files/themes/Abst2009Sada.pdf", ["2009", "卒業論文"]],
+    ["画像からスケッチへの個性を反映した変換システム", "/files/themes/Abst2008Inoue.pdf", ["2008", "卒業論文"]],
+    ["画像処理とクラスタリング", "/files/themes/Abst2007Ume.pdf", ["2007", "卒業論文"]],
+    ["Java3Dを利用した3次元イラストロジック", null, ["2004", "卒業論文", "高橋研"]],
+    ["Java3Dによるグラフ構造の描画", "/files/themes/Abst2004Inaba.pdf", ["2004", "卒業論文"]],
+    ["顔画像の変換による表情操作", null, ["2003", "卒業論文", "高橋研"]],
+  ]},
+  { label: "Web・アプリ開発", items: [
+    ["YOLOv8によるバイクのリアルタイム前方危機検知システムの開発（仮）", null, ["2026", "卒業論文"]],
+    ["類義語検索とカテゴリ分けを備えたカレンダーアプリ開発", "/files/themes/Abst2025Ono.pdf", ["2025", "卒業論文"]],
+    ["逆オークション方式を搭載したWeb販売システムの設計・開発", "/files/themes/Abst2025Ito.pdf", ["2025", "卒業論文"]],
+    ["接客音声とPOS データの統合による販売奨励システムの自動化", "/files/themes/Abst2024Mochida.pdf", ["2024", "卒業論文"]],
+    ["機械学習を活用したイチゴ果実の画像認識モデルと栽培支援アプリケーションの開発", "/files/themes/Abst2023Matsumoto.pdf", ["2023", "優秀プレゼン", "卒業論文"]],
+    ["姿勢推定を用いたフェンシング動作の上達補助アプリの開発", "/files/themes/Abst2023Kamimura.pdf", ["2023", "卒業論文"]],
+    ["ChatGPT を用いた音声認識による注文システムの開発", "/files/themes/Abst2023Fukuhara.pdf", ["2023", "卒業論文"]],
+    ["BLE Beacon を用いた神社境内案内アプリの開発", "/files/themes/Abst2021Takai.pdf", ["2021", "卒業論文"]],
+    ["楽譜画像からのギター押弦位置推定システムの開発", "/files/themes/Abst2021Kitamura.pdf", ["2021", "優秀プレゼン", "卒業論文"]],
+    ["言語運用能力向上のための通信型ナンプレアプリ", "/files/themes/Abst2018ito.pdf", ["2018", "卒業論文"]],
+    ["無線メッシュ通信を用いた安否確認アプリの開発", "/files/themes/Abst2018takeuchi.pdf", ["2018", "卒業論文"]],
+    ["個人経営店のための運営補助ツールの作成", "/files/themes/Abst2014shimada.pdf", ["2014", "卒業論文"]],
+    ["Kinectを用いたものまねロボットシステムの開発", "/files/themes/Abst2012Shibue.pdf", ["2012", "卒業論文"]],
+    ["Web検索とグラフ構造を用いた発想支援システム", "/files/themes/Abst2010Matsu.pdf", ["2010", "卒業論文"]],
+    ["ソフトウェアインターフェースの問題点に対する考察とそれに基づくエディタソフトの作成", "/files/themes/Abst2003Tsuchi.pdf", ["2003", "卒業論文"]],
+    ["色覚異常者のもつ色知覚のwebにおける再現", "/files/themes/Abst2003Okada.pdf", ["2003", "卒業論文"]],
+  ]},
+  { label: "深層学習・ニューラルネットワーク", items: [
+    ["深層学習による外国為替の価格変動予測モデルの構築（仮）", null, ["2026", "卒業論文"]],
+    ["形態素解析に基づくモーラ数推定とLLMを統合した俳句創作学習支援チャットボットの開発（仮）", null, ["2026", "卒業論文"]],
+    ["YOLOv8によるバイクのリアルタイム前方危機検知システムの開発（仮）", null, ["2026", "卒業論文"]],
+    ["Wave-U-Netを用いたピアノ楽曲からの主旋律抽出（仮）", null, ["2026", "卒業論文"]],
+    ["RAGを用いた対話型AIによる大学履修登録支援システムの構築", "/files/themes/Abst2025Yukawa.pdf", ["2025", "優秀プレゼン", "卒業論文"]],
+    ["MobileNetV2-UNetを用いた髪型シミュレーションシステム", "/files/themes/Abst2025Fujio.pdf", ["2025", "卒業論文"]],
+    ["ChatGPT を用いた音声認識による注文システムの開発", "/files/themes/Abst2023Fukuhara.pdf", ["2023", "卒業論文"]],
+    ["GANを用いた手書き数字画像の生成", "/files/themes/Abst2020Nogami.pdf", ["2020", "卒業論文"]],
+    ["word2vec を用いた n-gram モデルによる楽曲類似度解析", "/files/themes/Abst2016Wada.pdf", ["2016", "卒業論文"]],
+    ["Word2vec を用いた MIDI 楽曲データの解析", "/files/themes/Abst2015Kawa_ja.pdf", ["2015", "修士論文"]],
+    ["局所的な線維結合を持つ神経回路モデル", "/files/themes/Abst2001Kimura.pdf", ["2001", "卒業論文"]],
+    ["ニューラルネットによる表情からの情動認識", "/files/themes/Abst2001Konishi.pdf", ["2001", "卒業論文"]],
+  ]},
+  { label: "シミュレーション・数理モデル", items: [
+    ["MobileNetV2-UNetを用いた髪型シミュレーションシステム", "/files/themes/Abst2025Fujio.pdf", ["2025", "卒業論文"]],
+    ["部分領域間の流量関数近似による避難行動シミュレーション", "/files/themes/Abst2016Kouge_ja.pdf", ["2016", "修士論文"]],
+    ["確率的セルオートマトンによるモザイク動画の圧縮", "/files/themes/Abst2015Konishi.pdf", ["2015", "卒業論文"]],
+    ["A 型インフルエンザウイルスの HA 塩基配列の解析と変異予測シミュレーション", "/files/themes/Abst2015Shiba_ja.pdf", ["2015", "修士論文", "優秀プレゼン"]],
+    ["混合免疫モデルを用いたマルチエージェント感染シミュレーション", "/files/themes/Abst2013Arisa_ja.pdf", ["2013", "修士論文"]],
+    ["人間の腕の動作を再現するアームロボットシミュレーション", "/files/themes/Abst2011Tao.pdf", ["2011", "卒業論文"]],
+    ["ウイルス感染のシミュレーション", "/files/themes/Abst2010Nagase.pdf", ["2010", "卒業論文"]],
+    ["視界をもつ生物の群れのシミュレーション", "/files/themes/Abst2010Sawada.pdf", ["2010", "卒業論文"]],
+    ["繰り返し囚人のジレンマにおけるしっぺ返し戦略の考察", "/files/themes/Abst2008Haneda.pdf", ["2008", "卒業論文"]],
+    ["サッカーシミュレーションにおけるボールコントロールアルゴリズム", "/files/themes/Abst2007Shimada.pdf", ["2007", "卒業論文"]],
+    ["ODEによるスキーシミュレータ", "/files/themes/Abst2007Asai.pdf", ["2007", "卒業論文"]],
+    ["サッカーシミュレーションにおけるチーム戦略", "/files/themes/Abst2006Noda.pdf", ["2006", "卒業論文"]],
+  ]},
+  { label: "ロボティクス・身体運動", items: [
+    ["遺伝的アルゴリズムを用いた仮想生物の形態と運動の自律的最適化（仮）", null, ["2026", "卒業論文"]],
+    ["遺伝的アルゴリズムによる人体モデルの動作獲得", "/files/themes/Abst2016Kiso.pdf", ["2016", "優秀プレゼン", "卒業論文"]],
+    ["ODEを用いたボール蹴りロボットによる的当ての学習", "/files/themes/Abst2014nakano.pdf", ["2014", "卒業論文"]],
+    ["Kinectを用いたものまねロボットシステムの開発", "/files/themes/Abst2012Shibue.pdf", ["2012", "卒業論文"]],
+    ["人間の腕の動作を再現するアームロボットシミュレーション", "/files/themes/Abst2011Tao.pdf", ["2011", "卒業論文"]],
+    ["実数値遺伝的アルゴリズムを用いた多関節モデルの前進動作獲得", "/files/themes/Abst2011Hamaguchi.pdf", ["2011", "卒業論文"]],
+    ["ニ足歩行ロボットの歩行速度自動調整システム", "/files/themes/Abst2011Arisa.pdf", ["2011", "卒業論文"]],
+    ["多関節モデルにおける強化学習による起立動作の獲得", "/files/themes/Abst2010Asai_jp.pdf", ["2010", "修士論文"]],
+    ["ヒューマノイドロボット HOAP-2 のリアルタイム制御", null, ["2003", "卒業論文", "高橋研"]],
+    ["マスタースレーブシステムを用いたブロック型ロボットの行動制御", "/files/themes/Abst2003Takeda.pdf", ["2003", "卒業論文"]],
+    ["自他解釈システムを持つ自律学習ロボットのコミュニケーション", "/files/themes/Abst2003Kimura.pdf", ["2003", "修士論文"]],
+  ]},
+  { label: "音声処理", items: [
+    ["顔画像認識を活用したキャラクターとの音声対話システム", "/files/themes/Abst2024Ohata.pdf", ["2024", "優秀プレゼン", "卒業論文"]],
+    ["接客音声とPOS データの統合による販売奨励システムの自動化", "/files/themes/Abst2024Mochida.pdf", ["2024", "卒業論文"]],
+    ["ChatGPT を用いた音声認識による注文システムの開発", "/files/themes/Abst2023Fukuhara.pdf", ["2023", "卒業論文"]],
+    ["HRTFと加速度センサーを用いたリアルタイム空間オーディオ", "/files/themes/Abst2022Shibuya.pdf", ["2022", "卒業論文"]],
+    ["画像解析と音声認識を利用した授業動画の自動チャプタ分割", "/files/themes/abst2021kitamura.pdf", ["2021", "優秀プレゼン", "卒業論文"]],
+    ["NAOを活用した音声認識による対話システムの作成", "/files/themes/t150003abst.pdf", ["2019", "卒業論文"]],
+    ["人間の歌った音声で音楽を作る", "/files/themes/Abst2016Mitsuhashi.pdf", ["2016", "卒業論文"]],
+    ["打鍵による個人識別", "/files/themes/Abst2015Katayama.pdf", ["2015", "卒業論文"]],
+    ["多重解像度解析を用いた音素分類木と音声超解像への適用", "/files/themes/Abst2015Sugii_ja.pdf", ["2015", "修士論文"]],
+    ["区分解像度解析を用いた学習型超解像", "/files/themes/Abst2013Sugii.pdf", ["2013", "卒業論文"]],
+    ["サウンドビジュアライザの作成", "/files/themes/Abst2007Haya.pdf", ["2007", "卒業論文"]],
+  ]},
+  { label: "画像認識", items: [
+    ["顔画像認識を活用したキャラクターとの音声対話システム", "/files/themes/Abst2024Ohata.pdf", ["2024", "優秀プレゼン", "卒業論文"]],
+    ["機械学習を活用したイチゴ果実の画像認識モデルと栽培支援アプリケーションの開発", "/files/themes/Abst2023Matsumoto.pdf", ["2023", "優秀プレゼン", "卒業論文"]],
+    ["姿勢推定を用いたフェンシング動作の上達補助アプリの開発", "/files/themes/Abst2023Kamimura.pdf", ["2023", "卒業論文"]],
+    ["顔画像個人識別による属性情報表示システム", "/files/themes/Abst2022Sakota.pdf", ["2022", "卒業論文"]],
+    ["楽譜画像からのギター押弦位置推定システムの開発", "/files/themes/Abst2021Kitamura.pdf", ["2021", "優秀プレゼン", "卒業論文"]],
+    ["画像解析と音声認識を利用した授業動画の自動チャプタ分割", "/files/themes/abst2021kitamura.pdf", ["2021", "優秀プレゼン", "卒業論文"]],
+    ["画像局所特徴量を用いた 顔個人識別システムの比較", "/files/themes/Abst2015Ohno.pdf", ["2015", "卒業論文"]],
+    ["動画像の動き領域検出による背景抽出カメラ", null, ["2004", "卒業論文", "高橋研"]],
+    ["色情報とオプティカルフローを用いた動画中の手の追跡", null, ["2003", "卒業論文", "高橋研"]],
+    ["画像の縮小・拡大を用いた部分空間法による顔領域の検出", null, ["2003", "修士論文", "高橋研"]],
+  ]},
+  { label: "強化学習・最適化", items: [
+    ["遺伝的アルゴリズムを用いた仮想生物の形態と運動の自律的最適化（仮）", null, ["2026", "卒業論文"]],
+    ["Mario-Playing を利用した深層強化学習におけるハイパーパ ラメータの影響の調査", "/files/themes/Abst2023Kawakami.pdf", ["2023", "卒業論文"]],
+    ["強化学習アルゴリズムPPOとSACの比較と考察", "/files/themes/Abst2020Kawakami.pdf", ["2020", "卒業論文"]],
+    ["遺伝的アルゴリズムによる人体モデルの動作獲得", "/files/themes/Abst2016Kiso.pdf", ["2016", "優秀プレゼン", "卒業論文"]],
+    ["多安定な価値構造を獲得する強化学習モデルとその学習ダイナミクス", "/files/themes/Abst2013Hama_ja.pdf", ["2013", "修士論文"]],
+    ["実数値遺伝的アルゴリズムを用いた多関節モデルの前進動作獲得", "/files/themes/Abst2011Hamaguchi.pdf", ["2011", "卒業論文"]],
+    ["多関節モデルにおける強化学習による起立動作の獲得", "/files/themes/Abst2010Asai_jp.pdf", ["2010", "修士論文"]],
+    ["巡回セールスマン問題に対する最適化アルゴリズムの考察", "/files/themes/Abst2006Rika.pdf", ["2006", "卒業論文"]],
+    ["遺伝的アルゴリズムによるユーザ変化に対応したゲーム戦略の進化", "/files/themes/Abst2003Ikeda.pdf", ["2003", "卒業論文"]],
+  ]},
+  { label: "自然言語処理", items: [
+    ["形態素解析に基づくモーラ数推定とLLMを統合した俳句創作学習支援チャットボットの開発（仮）", null, ["2026", "卒業論文"]],
+    ["RAGを用いた対話型AIによる大学履修登録支援システムの構築", "/files/themes/Abst2025Yukawa.pdf", ["2025", "優秀プレゼン", "卒業論文"]],
+    ["顔画像認識を活用したキャラクターとの音声対話システム", "/files/themes/Abst2024Ohata.pdf", ["2024", "優秀プレゼン", "卒業論文"]],
+    ["NAOを活用した音声認識による対話システムの作成", "/files/themes/t150003abst.pdf", ["2019", "卒業論文"]],
+    ["言語運用能力向上のための通信型ナンプレアプリ", "/files/themes/Abst2018ito.pdf", ["2018", "卒業論文"]],
+    ["話題語に注目したマルコフ連鎖型人工無能の改善", "/files/themes/Abst2014takayama.pdf", ["2014", "卒業論文"]],
+    ["文ベクトルを用いた文脈考慮型人工無能", "/files/themes/Abst2013Yuuki.pdf", ["2013", "卒業論文"]],
+    ["文脈を考慮したマルコフ連鎖型チャットボットの作成", "/files/themes/Abst2010Yagi.pdf", ["2010", "卒業論文"]],
+  ]},
+  { label: "ゲームAI", items: [
+    ["Mario-Playing を利用した深層強化学習におけるハイパーパ ラメータの影響の調査", "/files/themes/Abst2023Kawakami.pdf", ["2023", "卒業論文"]],
+    ["言語運用能力向上のための通信型ナンプレアプリ", "/files/themes/Abst2018ito.pdf", ["2018", "卒業論文"]],
+    ["Python によるテキサスホールデムポーカーの役判定と勝敗決定", "/files/themes/Abst2018itami.pdf", ["2018", "卒業論文"]],
+    ["盤面を分けてプレイアウトを行うコンピュータ囲碁の作成", "/files/themes/Abst2014kouge.pdf", ["2014", "卒業論文"]],
+    ["左右詰め手法と仮定法を用いたイラストロジック解読アルゴリズム", "/files/themes/Abst2010Yanagi.pdf", ["2010", "卒業論文"]],
+    ["Java3Dを利用した3次元イラストロジック", null, ["2004", "卒業論文", "高橋研"]],
+    ["遺伝的アルゴリズムによるユーザ変化に対応したゲーム戦略の進化", "/files/themes/Abst2003Ikeda.pdf", ["2003", "卒業論文"]],
+    ["サーバ・クライアントシステムによるネットワーク鬼ごっこゲーム", "/files/themes/Abst2002Nakazawa.pdf", ["2002", "卒業論文"]],
+  ]},
+  { label: "音楽情報処理", items: [
+    ["Wave-U-Netを用いたピアノ楽曲からの主旋律抽出（仮）", null, ["2026", "卒業論文"]],
+    ["百人一首の読手音源データのクラスタリングと解析", "/files/themes/Abst2022Tani.pdf", ["2022", "卒業論文"]],
+    ["word2vec を用いた n-gram モデルによる楽曲類似度解析", "/files/themes/Abst2016Wada.pdf", ["2016", "卒業論文"]],
+    ["音楽ゲームへの個別学習システムの実装", "/files/themes/Abst2015Yoshida.pdf", ["2015", "卒業論文"]],
+    ["Word2vec を用いた MIDI 楽曲データの解析", "/files/themes/Abst2015Kawa_ja.pdf", ["2015", "修士論文"]],
+    ["MML データの変調プログラム", "/files/themes/Abst2002Hino.pdf", ["2002", "卒業論文"]],
+    ["状態遷移確率モデルに基づく楽曲群の学習と構造分析", "/files/themes/Abst2001KosakiKoba.pdf", ["2001", "卒業論文"]],
+  ]},
+  { label: "データ解析・データベース", items: [
+    ["百人一首の読手音源データのクラスタリングと解析", "/files/themes/Abst2022Tani.pdf", ["2022", "卒業論文"]],
+    ["サッカーリーグのデータ解析システム構築とデータ分析", "/files/themes/Abst2008Umehara.pdf", ["2008", "卒業論文"]],
+    ["画像処理とクラスタリング", "/files/themes/Abst2007Ume.pdf", ["2007", "卒業論文"]],
+    ["データベースと連係によりメールを一元管理可能なメールクライアントの開発", null, ["2003", "卒業論文", "高橋研"]],
+    ["ボートレース結果のデータベース化と解析", "/files/themes/Abst2002Moriya.pdf", ["2002", "卒業論文"]],
+  ]},
+  { label: "感染症・生命科学", items: [
+    ["新型コロナウイルスの RNA 解析", "/files/themes/Abst2021nakagawa.pdf", ["2021", "卒業論文"]],
+    ["A 型インフルエンザウイルスの HA 塩基配列の解析と変異予測シミュレーション", "/files/themes/Abst2015Shiba_ja.pdf", ["2015", "修士論文", "優秀プレゼン"]],
+    ["混合免疫モデルを用いたマルチエージェント感染シミュレーション", "/files/themes/Abst2013Arisa_ja.pdf", ["2013", "修士論文"]],
+    ["ウイルス感染のシミュレーション", "/files/themes/Abst2010Nagase.pdf", ["2010", "卒業論文"]],
+    ["個体移動を伴うウィルス感染拡散モデル", "/files/themes/Abst2006Kawai.pdf", ["2006", "卒業論文"]],
+  ]},
+  { label: "ネットワーク・通信", items: [
+    ["BLE Beacon を用いた神社境内案内アプリの開発", "/files/themes/Abst2021Takai.pdf", ["2021", "卒業論文"]],
+    ["Raspberry Piとソケット通信を用いた自動照明点灯システム", "/files/themes/Abst2020Nakanishi.pdf", ["2020", "卒業論文"]],
+    ["無線メッシュ通信を用いた安否確認アプリの開発", "/files/themes/Abst2018takeuchi.pdf", ["2018", "卒業論文"]],
+  ]},
+  { label: "プログラミング言語", items: [
+    ["プログラミング言語 Erlang の評価", "/files/themes/Abst2011Hagiwara.pdf", ["2011", "卒業論文"]],
+  ]},
+];
+
+<Tabs>
+  <Tab title="年代別">
+    {byYear.map(({ label, items }) => (
+      <div style="margin-bottom: 2rem;">
+        <p style="font-family: var(--blume-font-display); font-weight: 600; font-size: 1.15rem; margin: 0 0 0.75rem; color: var(--blume-accent);">{label}</p>
+        <ul style="margin: 0; padding-left: 1.25rem; list-style: none;">
+          {items.map(([title, pdf, tags]) => (
+            <li style="margin-bottom: 0.6rem; display: flex; align-items: baseline; gap: 1rem;">
+              <span style="flex: 1;">{pdf ? <a href={pdf} target="_blank" rel="noreferrer">{title}</a> : title}</span>
+              <span style="display: flex; gap: 0.4rem; flex-shrink: 0; white-space: nowrap;">
+                {tags.map((tag) => <Badge>{tag}</Badge>)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </Tab>
+  <Tab title="分野別">
+    {byField.map(({ label, items }) => (
+      <div style="margin-bottom: 2rem;">
+        <p style="font-family: var(--blume-font-display); font-weight: 600; font-size: 1.15rem; margin: 0 0 0.75rem; color: var(--blume-accent);">{label}</p>
+        <ul style="margin: 0; padding-left: 1.25rem; list-style: none;">
+          {items.map(([title, pdf, tags]) => (
+            <li style="margin-bottom: 0.6rem; display: flex; align-items: baseline; gap: 1rem;">
+              <span style="flex: 1;">{pdf ? <a href={pdf} target="_blank" rel="noreferrer">{title}</a> : title}</span>
+              <span style="display: flex; gap: 0.4rem; flex-shrink: 0; white-space: nowrap;">
+                {tags.map((tag) => <Badge>{tag}</Badge>)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </Tab>
+</Tabs>

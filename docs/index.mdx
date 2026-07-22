@@ -1,0 +1,56 @@
+---
+title: Slab.math
+seo:
+  description: 龍谷大学理工学部 数理・情報科学課程 さの研究室
+---
+
+<p style="font-size: 1.125rem; color: var(--blume-muted-foreground); margin: -0.5rem 0 2rem;">[龍谷大学](https://www.ryukoku.ac.jp/)[理工学部](https://www.rikou.ryukoku.ac.jp/) [数理・情報科学課程](https://www.math.ryukoku.ac.jp/) **さの研究室**</p>
+
+## Slab
+
+<CardGroup cols={3}>
+  <Card title="メンバー" icon="users" href="/members" />
+  <Card title="過去テーマ一覧" icon="list" href="/themes" />
+  <Card title="配属説明会資料" icon="file-text" href="/assignment" />
+</CardGroup>
+
+## Lectures
+
+{[
+  { title: "プログラミング及び実習2", icon: "terminal", tags: ["1年後期", "選択必修", "教職（情報）必修"], href: "https://slab.math.ryukoku.ac.jp/prog2" },
+  { title: "ネットワーク及び演習", icon: "network", tags: ["3年3Q", "選択科目", "教職（情報）必修"], href: "https://slab.math.ryukoku.ac.jp/network" },
+  { title: "数理情報演習：さの", icon: "flask-conical", tags: ["3年1Q", "必修科目"], href: "/lectures/sano-seminar" },
+  { title: "キャリア入門", icon: "briefcase", tags: ["1年前期", "全学共通", "選択科目", "教養科目"], links: [["2023年度資料", "/files/career-dx2023.pdf"], ["2022年度資料", "/files/career-dx.pdf"]] },
+  { title: "クラウドコンピューティング演習", icon: "cloud", tags: ["2年4Q", "学部共通"] },
+].map(({ title, icon, tags, href, links }, i) => (
+  <>
+    {i === 3 && <hr style="margin: 1.5rem 0 0.75rem; border: none; border-top: 1px solid var(--blume-border);" />}
+    {i === 3 && <p style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blume-muted-foreground); margin: 0 0 0.75rem;">Past</p>}
+    <div style={`display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; border: 1px solid var(--blume-border); border-radius: var(--blume-radius); background: var(--blume-muted); ${i > 0 && i !== 3 ? "margin-top: 0.75rem;" : ""}`}>
+      <Icon icon={icon} size={24} color="var(--blume-accent)" />
+      {href ? (
+        <a href={href} style="font-family: var(--blume-font-display); font-weight: 600; margin: 0; min-width: 16rem; flex-shrink: 0; color: inherit;">{title}</a>
+      ) : (
+        <p style="font-family: var(--blume-font-display); font-weight: 600; margin: 0; min-width: 16rem; flex-shrink: 0;">{title}</p>
+      )}
+      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;">
+        {tags.map((tag) => <Badge>{tag}</Badge>)}
+        {links && links.map(([label, url]) => (
+          <a href={url} target="_blank" rel="noreferrer" style="font-size: 0.8rem; color: var(--blume-muted-foreground);">{label}</a>
+        ))}
+      </div>
+    </div>
+  </>
+))}
+
+## Misc
+
+- [Sharif Judge for 先端理工](https://judge.st.ryukoku.ac.jp/)
+- [履修登録サポートAI](https://udify.app/chat/vdUmPaxqFzvqAmti)
+- [StrawScan](https://elite.math.ryukoku.ac.jp/strawscan/)
+- [龍大スケジューラー](https://ryukoku-schedule-adjuster-921713288262.asia-south1.run.app/)
+- [デスクトップ録画ツール](https://elite.math.ryukoku.ac.jp/desktoprecord.html)
+- [資料図書伝票作成w/OpenBD](http://whale.math.ryukoku.ac.jp/slip/)（学内のみ）
+- [pdf2xlsx](https://elite.math.ryukoku.ac.jp/pdf2xlsx/)（学内のみ）
+- ~~情報教育ボランティアサークル~~
+- [~~先端理工出席sk2~~](https://github.com/sanoakr/sk2)
