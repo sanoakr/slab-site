@@ -18,6 +18,14 @@ gtag('config', 'G-21ZLV68166');`,
       },
     ],
   },
+  // 検索索引のトークナイザは i18n.defaultLocale から選ばれる（blume 1.2.1 以降）。
+  // 日本語では Intl.Segmenter による分かち書きに切り替わり、既定の英語トークナイザが
+  // 日本語をすべて区切り文字として捨てる問題（サイト内検索・Ask AI の grounding が
+  // 0件になる）を回避する。単一ロケールなので URL 接頭辞や言語切替 UI は出ない。
+  i18n: {
+    defaultLocale: "ja",
+    locales: [{ code: "ja", label: "日本語" }],
+  },
   theme: {
     accent: "#b8934a",
     radius: "sm",
