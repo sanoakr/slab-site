@@ -141,9 +141,11 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 #blume-content [data-blume-card] { min-height: 0 !important; padding-bottom: 1rem !important; }
 /* メインのリンク（メンバー等）を Lecture 以下の行より明確に目立たせる */
 #blume-content [data-blume-card] p {
-  font-family: var(--blume-font-display); font-size: 1.75rem !important; font-weight: 700; letter-spacing: -0.02em;
+  font-family: var(--blume-font-display); font-size: 1.5rem !important; font-weight: 700; letter-spacing: -0.02em;
   line-height: 1.2; color: var(--blume-foreground) !important;
 }
 #blume-content [data-blume-card] svg { width: 1.75rem; height: 1.75rem; }
 #blume-content [data-blume-card]:hover p { color: var(--blume-accent) !important; }
 #blume-content div[style*="gap: 1.25rem"] > a, #blume-content div[style*="gap: 1.25rem"] > p { font-size: 0.95rem; font-weight: 500; }
+#blume-content [data-blume-card] > div > div:empty { display: none; }
+#blume-content [data-blume-card] { height: auto !important; align-self: start; }
