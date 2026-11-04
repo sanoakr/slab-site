@@ -121,3 +121,31 @@ span.bg-muted.border-transparent {
   --blume-accent-foreground: oklch(0.15 0.02 130);
 }
 h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+
+/* 候補 Impeccable: Read モード（ドキュメント）。読み幅 65-75 字、型の階層、等幅数字、
+   選択色・スクロールバー・フォーカスを配色から設計。アイコンカードは使わず文字リンクにする。右レール構成。 */
+#blume-content { max-width: 40rem; }
+#blume-content p, #blume-content li { line-height: 1.85; max-width: 68ch; font-variant-numeric: tabular-nums; }
+#blume-content h1 { font-size: 3rem; line-height: 1.1; text-wrap: balance; letter-spacing: -0.03em; }
+#blume-content h2 { font-size: 1.6rem; margin: 3.5rem 0 1rem; text-wrap: balance; }
+#blume-content h3 { margin: 2.5rem 0 0.75rem; font-size: 1.05rem; color: var(--blume-muted-foreground); font-weight: 600; }
+::selection { background: color-mix(in oklch, var(--blume-accent) 35%, transparent); color: inherit; }
+* { scrollbar-width: thin; scrollbar-color: var(--blume-border) transparent; }
+:focus-visible { outline: 2px solid var(--blume-accent); outline-offset: 3px; border-radius: 2px; }
+a { text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+#blume-content div[style*="--blume-cols"] { gap: 0 1.5rem !important; }
+#blume-content [data-blume-card] {
+  background: transparent !important; border: 0 !important; border-top: 1px solid var(--blume-border) !important; border-radius: 0 !important;
+}
+#blume-content [data-blume-card] > div { padding: 0.9rem 0 !important; }
+#blume-content [data-blume-card] > div > div:first-child { display: none; }
+#blume-content [data-blume-card] p { margin: 0 !important; font-weight: 600; }
+#blume-content [data-blume-card]:hover { border-top-color: var(--blume-accent) !important; }
+#blume-content div[style*="gap: 1.25rem"] {
+  display: grid !important; grid-template-columns: minmax(12rem, 1fr) 1.4fr; align-items: baseline;
+  background: transparent !important; border: 0 !important; border-top: 1px solid var(--blume-border) !important;
+  border-radius: 0 !important; padding: 0.85rem 0 !important; margin-top: 0 !important;
+}
+#blume-content div[style*="gap: 1.25rem"] > svg, #blume-content div[style*="gap: 1.25rem"] > [aria-hidden] { display: none; }
+#blume-content div[style*="gap: 1.25rem"] > a, #blume-content div[style*="gap: 1.25rem"] > p { min-width: 0 !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
