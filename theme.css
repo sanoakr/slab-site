@@ -138,3 +138,4 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
   background: transparent !important; border: 0 !important; border-bottom: 1px solid var(--blume-border) !important;
   border-radius: 0 !important; padding-inline: 0 !important; margin-top: 0 !important;
 }
+#blume-content [data-blume-card] { min-height: 0 !important; padding-bottom: 1rem !important; }
