@@ -1,108 +1,3 @@
-/* Bump the root font size so the rem-based type scale reads larger site-wide. */
-:root {
-  font-size: 18px;
-}
-
-/*
- * Dark mode: the default muted/border tokens sit too close to the near-black
- * page background, so custom cards (Lecture rows, member cards) and badges
- * read as barely-there against it. Lift muted further off background, brighten
- * muted-foreground for badge/secondary-text legibility, and give borders more
- * presence — all only in dark mode, since light mode already has good contrast.
- */
-:root[data-theme="dark"] {
-  --blume-muted: oklch(0.22 0 0);
-  --blume-muted-foreground: oklch(0.8 0 0);
-  --blume-border: oklch(0.36 0 0);
-}
-
-/*
- * Default-variant Badge fills with --blume-muted — the same token our custom
- * cards (Lecture rows, member cards) use for their own background, so a badge
- * read as barely-there (same gray on gray) in both color modes. A border
- * alone still wasn't enough contrast; tint the fill/text/border with the
- * theme accent instead, so tags read as clearly colored pills regardless of
- * what card they sit on.
- */
-span.bg-muted.border-transparent {
-  background: color-mix(in srgb, var(--blume-accent) 18%, transparent) !important;
-  color: var(--blume-accent) !important;
-  border-color: color-mix(in srgb, var(--blume-accent) 45%, transparent) !important;
-}
-
-/* Tabs: tighten trigger spacing so a wide category list (Past Themes' 分野別
-   tabs) has a fighting chance of fitting more tabs before the row scrolls. */
-[data-blume-tablist] {
-  gap: 0.5rem !important;
-}
-
-/*
- * Hide "Open in chat" — redundant now that Ask AI is enabled. Not an
- * overridable layout slot in Blume, so this targets its <details> directly.
- * Safe today because we don't use github/export/mcp, the only other features
- * that render a sibling <details> here — re-check this rule if any of those
- * are enabled later, since it would also hide theirs.
- */
-[data-blume-page-actions] details {
-  display: none;
-}
-
-/*
- * Consolidate both sidebars (primary nav + table of contents) onto the right,
- * stacked vertically in one column. Blume's grid is [nav][content][toc] (nav
- * fixed-width, content flexible, toc fixed-width at xl); we collapse it to
- * [content][right-rail] and place nav + toc into the same right-hand grid
- * column, one above the other.
- */
-/*
- * The grid has no max-width of its own (only `mx-auto`, which does nothing
- * without one), so on wide screens it fills the full viewport and the
- * article — centered only *within* the flexible left column — reads as
- * shifted left of true page-center now that the right rail absorbed both
- * sidebars. Capping the grid's own width and centering it as one unit fixes
- * that; picked to comfortably fit the 42rem article + a 17.5rem right rail.
- */
-[data-blume-doc-grid] {
-  max-width: 80rem;
-  margin-inline: auto;
-}
-
-@media (min-width: 64rem) {
-  [data-blume-doc-grid] {
-    grid-template-columns: minmax(0, 1fr) 17.5rem !important;
-    /* Row 1 is a fixed length so it can never be stretched by the spanning
-       content column below — that's what previously let excess height leak
-       into row 1 and push row 2 (the TOC) far down the page. */
-    grid-template-rows: 14rem auto !important;
-    align-items: start !important;
-  }
-  [data-blume-nav-drawer] {
-    grid-column: 2;
-    grid-row: 1;
-    height: 14rem !important;
-    max-height: 14rem !important;
-    overflow-y: auto;
-    position: static !important;
-    border-inline-end: none !important;
-    border-bottom: 1px solid var(--blume-border);
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
-  #blume-content {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-  }
-}
-
-@media (min-width: 80rem) {
-  [data-blume-toc] {
-    grid-column: 2;
-    grid-row: 2;
-    height: auto !important;
-    max-height: none !important;
-    position: static !important;
-  }
-}
 /* 候補C「Night」: ダーク基調。墨黒に黄緑のアクセント、等幅フォントを見出し周りに効かせる。 */
 :root {
   --blume-background: oklch(0.97 0.006 120);
@@ -121,3 +16,20 @@ span.bg-muted.border-transparent {
   --blume-accent-foreground: oklch(0.15 0.02 130);
 }
 h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+
+/* 候補2「Editorial」: ナビ+目次は右レール。見出しを大きく、カードや行の塗りと枠を外して罫線だけの誌面風に。 */
+#blume-content h1 { font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.02; letter-spacing: -0.035em; }
+#blume-content h2 {
+  font-family: var(--blume-font-mono);
+  font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--blume-accent); border-top: 1px solid var(--blume-border); padding-top: 1rem; margin-top: 3.5rem;
+}
+#blume-content [data-blume-card] {
+  background: transparent !important; border: 0 !important; border-top: 1px solid var(--blume-border) !important;
+  border-radius: 0 !important; padding-inline: 0 !important;
+}
+#blume-content [data-blume-card]:hover { border-top-color: var(--blume-accent) !important; }
+#blume-content div[style*="gap: 1.25rem"] {
+  background: transparent !important; border: 0 !important; border-bottom: 1px solid var(--blume-border) !important;
+  border-radius: 0 !important; padding-inline: 0 !important; margin-top: 0 !important;
+}
