@@ -25,7 +25,7 @@ seo:
 ].map(({ title, icon, tags, href, links }, i) => (
   <>
     {i === 3 && <hr style="margin: 1.5rem 0 0.75rem; border: none; border-top: 1px solid var(--blume-border);" />}
-    {i === 3 && <p style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blume-muted-foreground); margin: 0 0 0.75rem;">Past</p>}
+    {i === 3 && <h3>過去の講義</h3>}
     <div style={`display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; border: 1px solid var(--blume-border); border-radius: var(--blume-radius); background: var(--blume-muted); ${i > 0 && i !== 3 ? "margin-top: 0.75rem;" : ""}`}>
       <Icon icon={icon} size={24} color="var(--blume-accent)" />
       {href ? (
