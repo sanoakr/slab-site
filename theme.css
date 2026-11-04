@@ -47,62 +47,6 @@ span.bg-muted.border-transparent {
   display: none;
 }
 
-/*
- * Consolidate both sidebars (primary nav + table of contents) onto the right,
- * stacked vertically in one column. Blume's grid is [nav][content][toc] (nav
- * fixed-width, content flexible, toc fixed-width at xl); we collapse it to
- * [content][right-rail] and place nav + toc into the same right-hand grid
- * column, one above the other.
- */
-/*
- * The grid has no max-width of its own (only `mx-auto`, which does nothing
- * without one), so on wide screens it fills the full viewport and the
- * article — centered only *within* the flexible left column — reads as
- * shifted left of true page-center now that the right rail absorbed both
- * sidebars. Capping the grid's own width and centering it as one unit fixes
- * that; picked to comfortably fit the 42rem article + a 17.5rem right rail.
- */
-[data-blume-doc-grid] {
-  max-width: 80rem;
-  margin-inline: auto;
-}
-
-@media (min-width: 64rem) {
-  [data-blume-doc-grid] {
-    grid-template-columns: minmax(0, 1fr) 17.5rem !important;
-    /* Row 1 is a fixed length so it can never be stretched by the spanning
-       content column below — that's what previously let excess height leak
-       into row 1 and push row 2 (the TOC) far down the page. */
-    grid-template-rows: 14rem auto !important;
-    align-items: start !important;
-  }
-  [data-blume-nav-drawer] {
-    grid-column: 2;
-    grid-row: 1;
-    height: 14rem !important;
-    max-height: 14rem !important;
-    overflow-y: auto;
-    position: static !important;
-    border-inline-end: none !important;
-    border-bottom: 1px solid var(--blume-border);
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
-  #blume-content {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-  }
-}
-
-@media (min-width: 80rem) {
-  [data-blume-toc] {
-    grid-column: 2;
-    grid-row: 2;
-    height: auto !important;
-    max-height: none !important;
-    position: static !important;
-  }
-}
 /* 候補C「Night」: ダーク基調。墨黒に黄緑のアクセント、等幅フォントを見出し周りに効かせる。 */
 :root {
   --blume-background: oklch(0.97 0.006 120);
@@ -121,3 +65,6 @@ span.bg-muted.border-transparent {
   --blume-accent-foreground: oklch(0.15 0.02 130);
 }
 h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+
+/* 候補1「Classic」: Blume 標準の3カラム（左ナビ / 本文 / 右の目次）。読み幅を絞り、ナビを左に戻す。 */
+#blume-content { max-width: 44rem; }
