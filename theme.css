@@ -47,59 +47,52 @@ span.bg-muted.border-transparent {
   display: none;
 }
 
-/*
- * Consolidate both sidebars (primary nav + table of contents) onto the right,
- * stacked vertically in one column. Blume's grid is [nav][content][toc] (nav
- * fixed-width, content flexible, toc fixed-width at xl); we collapse it to
- * [content][right-rail] and place nav + toc into the same right-hand grid
- * column, one above the other.
- */
-/*
- * The grid has no max-width of its own (only `mx-auto`, which does nothing
- * without one), so on wide screens it fills the full viewport and the
- * article — centered only *within* the flexible left column — reads as
- * shifted left of true page-center now that the right rail absorbed both
- * sidebars. Capping the grid's own width and centering it as one unit fixes
- * that; picked to comfortably fit the 42rem article + a 17.5rem right rail.
- */
-[data-blume-doc-grid] {
-  max-width: 80rem;
-  margin-inline: auto;
+/* 候補C「Night」: ダーク基調。墨黒に黄緑のアクセント、等幅フォントを見出し周りに効かせる。 */
+:root {
+  --blume-background: oklch(0.97 0.006 120);
+  --blume-foreground: oklch(0.2 0.01 130);
+  --blume-muted: oklch(0.94 0.01 120);
+  --blume-border: oklch(0.85 0.015 120);
+  --blume-accent: oklch(0.5 0.14 130);
+  --blume-accent-foreground: oklch(0.99 0 0);
 }
+:root[data-theme="dark"] {
+  --blume-background: oklch(0.15 0.005 130);
+  --blume-foreground: oklch(0.93 0.01 120);
+  --blume-muted: oklch(0.2 0.008 130);
+  --blume-border: oklch(0.33 0.012 130);
+  --blume-accent: oklch(0.85 0.19 125);
+  --blume-accent-foreground: oklch(0.15 0.02 130);
+}
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 
+/* 候補 Taste: 装飾を外し、巨大な文字と色面で見せる。リンクは全幅の大きな行で、ホバーで面が反転する。
+   左ナビ+広い本文（目次は非表示）。 */
+[data-blume-toc] { display: none !important; }
 @media (min-width: 64rem) {
-  [data-blume-doc-grid] {
-    grid-template-columns: minmax(0, 1fr) 17.5rem !important;
-    /* Row 1 is a fixed length so it can never be stretched by the spanning
-       content column below — that's what previously let excess height leak
-       into row 1 and push row 2 (the TOC) far down the page. */
-    grid-template-rows: 14rem auto !important;
-    align-items: start !important;
-  }
-  [data-blume-nav-drawer] {
-    grid-column: 2;
-    grid-row: 1;
-    height: 14rem !important;
-    max-height: 14rem !important;
-    overflow-y: auto;
-    position: static !important;
-    border-inline-end: none !important;
-    border-bottom: 1px solid var(--blume-border);
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
-  #blume-content {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-  }
+  [data-blume-doc-grid] { grid-template-columns: 16rem minmax(0, 1fr) !important; max-width: 84rem; margin-inline: auto; }
 }
-
-@media (min-width: 80rem) {
-  [data-blume-toc] {
-    grid-column: 2;
-    grid-row: 2;
-    height: auto !important;
-    max-height: none !important;
-    position: static !important;
-  }
+#blume-content { max-width: 100%; }
+#blume-content h1 {
+  font-size: clamp(4rem, 9vw, 7.5rem); line-height: 0.95; letter-spacing: -0.045em; color: var(--blume-accent);
 }
+#blume-content h1 + p { font-size: 1.35rem !important; margin: 0.5rem 0 3.5rem !important; }
+#blume-content h2 { font-size: 2.25rem; letter-spacing: -0.03em; margin: 4rem 0 1.25rem; }
+#blume-content h3 { margin: 2.5rem 0 0.5rem; font-size: 1.1rem; color: var(--blume-muted-foreground); }
+#blume-content div[style*="--blume-cols"] { grid-template-columns: 1fr !important; gap: 0 !important; }
+#blume-content [data-blume-card] {
+  background: transparent !important; border: 0 !important; border-top: 1px solid var(--blume-border) !important;
+  border-radius: 0 !important; transition: background-color .15s, color .15s;
+}
+#blume-content [data-blume-card] > div { padding: 1.1rem 0.75rem !important; }
+#blume-content [data-blume-card] > div > div:first-child { display: none; }
+#blume-content [data-blume-card] p { margin: 0 !important; font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; color: inherit !important; }
+#blume-content [data-blume-card]:hover { background: var(--blume-accent) !important; color: var(--blume-accent-foreground); }
+#blume-content div[style*="gap: 1.25rem"] {
+  background: transparent !important; border: 0 !important; border-top: 1px solid var(--blume-border) !important;
+  border-radius: 0 !important; padding: 1.1rem 0.75rem !important; margin-top: 0 !important; transition: background-color .15s;
+}
+#blume-content div[style*="gap: 1.25rem"] > a, #blume-content div[style*="gap: 1.25rem"] > p { font-size: 1.25rem; }
+#blume-content div[style*="gap: 1.25rem"]:hover { background: var(--blume-muted) !important; }
+:focus-visible { outline: 3px solid var(--blume-accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
