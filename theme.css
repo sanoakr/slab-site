@@ -47,62 +47,6 @@ span.bg-muted.border-transparent {
   display: none;
 }
 
-/*
- * Consolidate both sidebars (primary nav + table of contents) onto the right,
- * stacked vertically in one column. Blume's grid is [nav][content][toc] (nav
- * fixed-width, content flexible, toc fixed-width at xl); we collapse it to
- * [content][right-rail] and place nav + toc into the same right-hand grid
- * column, one above the other.
- */
-/*
- * The grid has no max-width of its own (only `mx-auto`, which does nothing
- * without one), so on wide screens it fills the full viewport and the
- * article — centered only *within* the flexible left column — reads as
- * shifted left of true page-center now that the right rail absorbed both
- * sidebars. Capping the grid's own width and centering it as one unit fixes
- * that; picked to comfortably fit the 42rem article + a 17.5rem right rail.
- */
-[data-blume-doc-grid] {
-  max-width: 80rem;
-  margin-inline: auto;
-}
-
-@media (min-width: 64rem) {
-  [data-blume-doc-grid] {
-    grid-template-columns: minmax(0, 1fr) 17.5rem !important;
-    /* Row 1 is a fixed length so it can never be stretched by the spanning
-       content column below — that's what previously let excess height leak
-       into row 1 and push row 2 (the TOC) far down the page. */
-    grid-template-rows: 14rem auto !important;
-    align-items: start !important;
-  }
-  [data-blume-nav-drawer] {
-    grid-column: 2;
-    grid-row: 1;
-    height: 14rem !important;
-    max-height: 14rem !important;
-    overflow-y: auto;
-    position: static !important;
-    border-inline-end: none !important;
-    border-bottom: 1px solid var(--blume-border);
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
-  #blume-content {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-  }
-}
-
-@media (min-width: 80rem) {
-  [data-blume-toc] {
-    grid-column: 2;
-    grid-row: 2;
-    height: auto !important;
-    max-height: none !important;
-    position: static !important;
-  }
-}
 /* 候補C「Night」: ダーク基調。墨黒に黄緑のアクセント、等幅フォントを見出し周りに効かせる。 */
 :root {
   --blume-background: oklch(0.97 0.006 120);
@@ -121,3 +65,30 @@ span.bg-muted.border-transparent {
   --blume-accent-foreground: oklch(0.15 0.02 130);
 }
 h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+
+/* 候補 Hallmark: 床ルール準拠。ラベル・大文字トラッキング・錠剤タグ・入れ子カードを使わず、
+   1画面1アイデアの平らな罫線リストで構成する。左ナビ+目次の標準3カラム。 */
+#blume-content { max-width: 44rem; }
+#blume-content h1 { font-size: clamp(2.75rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; }
+#blume-content h2 { margin-top: 3rem; font-size: 1.5rem; }
+#blume-content h3 { margin: 2.25rem 0 0.5rem; font-size: 1rem; font-weight: 600; color: var(--blume-muted-foreground); }
+#blume-content div[style*="--blume-cols"] { grid-template-columns: 1fr !important; gap: 0 !important; }
+#blume-content [data-blume-card] {
+  background: transparent !important; border: 0 !important; border-bottom: 1px solid var(--blume-border) !important;
+  border-radius: 0 !important;
+}
+#blume-content [data-blume-card] > div { display: flex; align-items: center; gap: 0.9rem; padding: 0.9rem 0 !important; }
+#blume-content [data-blume-card] > div > div:first-child { margin: 0 !important; }
+#blume-content [data-blume-card] p { margin: 0 !important; font-size: 1.1rem; }
+#blume-content [data-blume-card]:hover p { color: var(--blume-accent); }
+span.bg-muted.border-transparent {
+  background: none !important; border: 0 !important; padding: 0 !important;
+  color: var(--blume-muted-foreground) !important; font-size: 0.85rem; font-weight: 400;
+}
+span.bg-muted.border-transparent + span.bg-muted.border-transparent::before { content: "/"; margin-right: 0.4rem; opacity: 0.5; }
+#blume-content div[style*="gap: 1.25rem"] {
+  background: transparent !important; border: 0 !important; border-bottom: 1px solid var(--blume-border) !important;
+  border-radius: 0 !important; padding: 0.9rem 0 !important; margin-top: 0 !important;
+}
+:focus-visible { outline: 2px solid var(--blume-accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
