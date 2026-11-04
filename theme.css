@@ -103,3 +103,21 @@ span.bg-muted.border-transparent {
     position: static !important;
   }
 }
+/* 候補C「Night」: ダーク基調。墨黒に黄緑のアクセント、等幅フォントを見出し周りに効かせる。 */
+:root {
+  --blume-background: oklch(0.97 0.006 120);
+  --blume-foreground: oklch(0.2 0.01 130);
+  --blume-muted: oklch(0.94 0.01 120);
+  --blume-border: oklch(0.85 0.015 120);
+  --blume-accent: oklch(0.5 0.14 130);
+  --blume-accent-foreground: oklch(0.99 0 0);
+}
+:root[data-theme="dark"] {
+  --blume-background: oklch(0.15 0.005 130);
+  --blume-foreground: oklch(0.93 0.01 120);
+  --blume-muted: oklch(0.2 0.008 130);
+  --blume-border: oklch(0.33 0.012 130);
+  --blume-accent: oklch(0.85 0.19 125);
+  --blume-accent-foreground: oklch(0.15 0.02 130);
+}
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }

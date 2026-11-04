@@ -27,12 +27,12 @@ gtag('config', 'G-21ZLV68166');`,
     locales: [{ code: "ja", label: "日本語" }],
   },
   theme: {
-    accent: "#b8934a",
-    radius: "sm",
+    accent: "#7fd11a",
+    radius: "md",
     fonts: {
-      display: "lora",
+      display: "space-grotesk",
       body: "inter",
-      mono: "ibm-plex-mono",
+      mono: "jetbrains-mono",
     },
   },
   deployment: {
