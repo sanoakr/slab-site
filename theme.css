@@ -103,3 +103,23 @@ span.bg-muted.border-transparent {
     position: static !important;
   }
 }
+/* 候補B「Slate」: 情報密度重視。スレートグレーに深いティール。角丸は控えめ、境界線で構造を示す。 */
+:root {
+  --blume-background: oklch(0.985 0.003 200);
+  --blume-foreground: oklch(0.24 0.02 220);
+  --blume-muted: oklch(0.955 0.008 200);
+  --blume-muted-foreground: oklch(0.46 0.02 220);
+  --blume-border: oklch(0.86 0.012 210);
+  --blume-accent: oklch(0.5 0.09 200);
+  --blume-accent-foreground: oklch(0.99 0 0);
+}
+:root[data-theme="dark"] {
+  --blume-background: oklch(0.2 0.015 220);
+  --blume-foreground: oklch(0.93 0.008 210);
+  --blume-muted: oklch(0.25 0.018 220);
+  --blume-border: oklch(0.38 0.02 215);
+  --blume-accent: oklch(0.77 0.11 195);
+  --blume-accent-foreground: oklch(0.15 0.02 220);
+}
+h1, h2, h3 { font-weight: 650; letter-spacing: -0.005em; }
+a { text-underline-offset: 0.2em; }
