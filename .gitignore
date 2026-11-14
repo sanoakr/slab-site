@@ -4,3 +4,4 @@ dist/
 .private-backups/
 node_modules/
 .DS_Store
+.wrangler/
