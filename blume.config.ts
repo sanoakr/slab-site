@@ -30,6 +30,12 @@ export default defineConfig({
   description: "龍谷大学理工学部 数理・情報科学課程 さの研究室",
   feedback: false,
   seo: {
+    og: {
+      // OG 画像の既定フォント（theme.fonts 由来の Lora/Inter）は日本語の字形を持たず、
+      // タイトルが豆腐になるため Noto Sans JP を明示する。アクセントもサイトの色に合わせる
+      fonts: [{ name: "Inter", weight: [400, 700] }, { name: "Noto Sans JP", weight: [400, 700] }],
+      palette: { accent: "#b8934a" },
+    },
     // JSON-LD の Organization ノード（サイトの運営主体）。WebSite・記事ノードの publisher になる
     organization: {
       name: "龍谷大学 理工学部 数理・情報科学課程 さの研究室",
