@@ -1,9 +1,45 @@
 import { defineConfig } from "blume";
+import type { ComponentMarkdown } from "blume";
+
+// components/LectureList.astro の props（docs/index.mdx で静的に書いた配列）
+interface Lecture {
+  title: string;
+  tags?: string[];
+  href?: string;
+  links?: [string, string][];
+}
+
+// 講義一覧を Markdown ミラー（/index.md・llms-full.txt）向けの箇条書きに変換する
+const lectureListMarkdown: ComponentMarkdown = ({ props }) => {
+  const items = props.items as Lecture[] | undefined;
+  if (!Array.isArray(items)) return null;
+  const lines = items.map(({ title, tags, href, links }) => {
+    const name = href ? `[${title}](${href})` : title;
+    const tagText = tags?.length ? `（${tags.join("・")}）` : "";
+    const linkText = links?.length
+      ? `: ${links.map(([label, url]) => `[${label}](${url})`).join("、")}`
+      : "";
+    return `- ${name}${tagText}${linkText}`;
+  });
+  const heading = typeof props.heading === "string" ? `### ${props.heading}\n\n` : "";
+  return heading + lines.join("\n");
+};
 
 export default defineConfig({
   title: "Slab.math",
   description: "龍谷大学理工学部 数理・情報科学課程 さの研究室",
   feedback: false,
+  seo: {
+    // JSON-LD の Organization ノード（サイトの運営主体）。WebSite・記事ノードの publisher になる
+    organization: {
+      name: "龍谷大学 理工学部 数理・情報科学課程 さの研究室",
+      address: {
+        addressLocality: "大津市",
+        addressRegion: "滋賀県",
+        addressCountry: "JP",
+      },
+    },
+  },
   analytics: {
     scripts: [
       {
@@ -36,10 +72,16 @@ gtag('config', 'G-21ZLV68166');`,
     },
   },
   deployment: {
+    // 公開URL。sitemap・OG画像・canonical・JSON-LD・エージェント向けマニフェストの
+    // 絶対URL化に必要（未設定だと sitemap と og:image が出力されない）。
+    site: "https://slab.math.ryukoku.ac.jp",
     output: "server",
     adapter: "node",
   },
   ai: {
+    markdownComponents: {
+      LectureList: lectureListMarkdown,
+    },
     ask: {
       enabled: false,
       provider: "openai-compatible",

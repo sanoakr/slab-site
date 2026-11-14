@@ -1,0 +1,45 @@
+---
+// 講義一覧のカード列。トップページ（docs/index.mdx）で使う。
+// MDX 内の JSX 式で直接組むと Markdown ミラー（/index.md）に JSX がそのまま
+// 出てしまうため、コンポーネント化して blume.config.ts の ai.markdownComponents で
+// Markdown の箇条書きに変換できるようにしている。
+import Icon from "blume/components/Icon.astro";
+import Badge from "blume/components/content/Badge.astro";
+
+interface Lecture {
+  title: string;
+  icon: string;
+  tags: string[];
+  href?: string;
+  links?: [string, string][];
+}
+
+interface Props {
+  items: Lecture[];
+  // 指定すると区切り線と小見出し（h3）を一覧の前に置く
+  heading?: string;
+}
+
+const { items, heading } = Astro.props;
+---
+
+{heading && <hr style="margin: 1.5rem 0 0.75rem; border: none; border-top: 1px solid var(--blume-border);" />}
+{heading && <h3>{heading}</h3>}
+{
+  items.map(({ title, icon, tags, href, links }, i) => (
+    <div style={`display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; border: 1px solid var(--blume-border); border-radius: var(--blume-radius); background: var(--blume-muted); ${i > 0 ? "margin-top: 0.75rem;" : ""}`}>
+      <Icon icon={icon} size={24} color="var(--blume-accent)" />
+      {href ? (
+        <a href={href} style="font-family: var(--blume-font-display); font-weight: 600; margin: 0; min-width: 16rem; flex-shrink: 0; color: inherit;">{title}</a>
+      ) : (
+        <p style="font-family: var(--blume-font-display); font-weight: 600; margin: 0; min-width: 16rem; flex-shrink: 0;">{title}</p>
+      )}
+      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;">
+        {tags.map((tag) => <Badge>{tag}</Badge>)}
+        {links && links.map(([label, url]) => (
+          <a href={url} target="_blank" rel="noreferrer" style="font-size: 0.8rem; color: var(--blume-muted-foreground);">{label}</a>
+        ))}
+      </div>
+    </div>
+  ))
+}
